@@ -46,8 +46,10 @@ console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to
 
 // `nestedfunction()` can access the variable `internal` because when `nestedfunction()` is invoked, the lexical scope
 // or environment in which the `nestedfunction()` was initialized remains available to `nestedFunction` after `myFunction()` 
-// has completed execution. When console.log() is passed in the variable name internal, nestedFunction looks for that local variable within it's scope (since every function creates its own scope) and since it doesn't 
-// find it within its scope, it looks up the scope chain to the enclosing function for that variable, in this case the myFunction scope. 
+// has completed execution. This is because whenever a function is nested within another function, the inner function creates a closure scope over the outer function's execution context. 
+// When console.log() is passed in the variable name internal, nestedFunction looks for that local variable within it's scope (since every function creates its own scope) and since it doesn't 
+// find it within its scope, it looks up the scope chain to its parent scope for that variable, in this case the `myFunction()` scope. It finds that the variable internal has been assigned a string value
+// `Hello! I'm inside myFunction!` and it passes this value to the log method.
 
 
 

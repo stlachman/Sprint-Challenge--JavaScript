@@ -44,7 +44,7 @@ A closure is what happens when an inner function remembers the environment and s
 
 Winow or Global Object Binding
 
-If the initial execution of JavaScript occurs within the global execution context, the  `this` keyword will reference the global object which is window in the case of a browser.
+If the initial execution of JavaScript occurs within the global execution context, the `this` keyword will reference the global object which is window in the case of a browser.
 
 Implicit Binding
 

@@ -30,13 +30,38 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+The biggest difference between the .forEach and .map methods is that .map creates a new array to store the items that are iterated over while with the .forEach method you will need to create a new array and then use the .push method  to move the items into that new array because forEach doesn’t return an array.
+
 2. What is the difference between a function and a method?
+
+A method is a function that is defined as the value of a property or key within an object while a function is defined outside of an object.  Methods are also implicitly given a this keyword when invoked which will reference the object which invoked it, while a function’s this keyword will reference the global object. 
 
 3. What is closure?
 
+A closure is what happens when an inner function remembers the environment and scope in which it was invoked even when the outer function has finished executing. Even if you have an outer function removed from the stack, the inner function retains access to the variable environment of the parent function’s execution context.
+
 4. Describe the four rules of the 'this' keyword.
 
+Winow or Global Object Binding
+
+If the initial execution of JavaScript occurs within the global execution context, the  `this` keyword will reference the global object which is window in the case of a browser.
+
+Implicit Binding
+
+Implicit binding occurs when you invoke a method on an object.  The object upon which the method is invoked will be the context for the this keyword. If a different object is chained to the method, then a different this keyword will be necessary to reference the object from which it came.
+
+Explicit Binding
+
+Explicit binding occurs when you use the methods call, apply, or bind to reference and set the this keyword explicitly on an object.  When creating a constructor function which inherits from a parent constructor function for example, the call method can be used to invoke the parent constructor function in the context of the child constructor function. It is like running the parent constructor function with the this keyword of the child constructor function. 
+
+New Keyword Binding
+
+When the new keyword is used to create an object from a constructor function,  the this keyword references the particular object returned by the constructor function. 
+
+
 5. Why do we need super() in an extended class?
+
+When the super keyword is used in an extended class, it gives us the ability to call and access the functions associated with the parent constructor.
 
 ## Project Set up
 

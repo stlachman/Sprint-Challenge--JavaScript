@@ -1,4 +1,4 @@
-// ==== Callbacks ====  
+// ==== Callbacks ====
 
 /* Step 1: Create a higher-order function that accepts a callback
   * Create a higher-order function named consume that can take 3 parameters.
@@ -7,9 +7,8 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 function consume(param1, param2, callback) {
-  return callback(param1, param2);
+	return callback(param1, param2);
 }
-
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -18,50 +17,44 @@ function consume(param1, param2, callback) {
 */
 
 function add(num1, num2) {
-  return num1 + num2;
+	return num1 + num2;
 }
-
 
 function multiply(num1, num2) {
-  return num1 * num2;
+	return num1 * num2;
 }
-
 
 function greeting(firstName, lastName) {
-  return `Hello ${firstName} ${lastName}, nice to meet you!`;
+	return `Hello ${firstName} ${lastName}, nice to meet you!`;
 }
 
-
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-console.log(consume(2,2,add)); // 4
-console.log(consume(10,16,multiply)); // 160
-console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume('Mary', 'Poppins', greeting)); // Hello Mary Poppins, nice to meet you!
 
-
-// ==== Closures ==== 
+// ==== Closures ====
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation:
 
 // `nestedfunction()` can access the variable `internal` because when `nestedfunction()` is invoked, the lexical scope
-// or environment in which the `nestedfunction()` was initialized remains available to `nestedFunction` after `myFunction()` 
-// has completed execution. This is because whenever a function is nested within another function, the inner function creates a closure scope over the outer function's execution context. 
-// When console.log() is passed in the variable name internal, nestedFunction looks for that local variable within it's scope (since every function creates its own scope) and since it doesn't 
+// or environment in which the `nestedfunction()` was initialized remains available to `nestedFunction` after `myFunction()`
+// has completed execution. This is because whenever a function is nested within another function, the inner function creates a closure scope over the outer function's execution context.
+// When console.log() is passed in the variable name internal, nestedFunction looks for that local variable within it's scope (since every function creates its own scope) and since it doesn't
 // find it within its scope, it looks up the scope chain to its parent scope for that variable, in this case the `myFunction()` scope. It finds that the variable internal has been assigned a string value
 // `Hello! I'm inside myFunction!` and it passes this value to the log method.
-
-
 
 const external = "I'm outside the function";
 
 function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
+	console.log(external);
+	const internal = "Hello! I'm inside myFunction!";
 
-  function nestedFunction() {
-    console.log(internal);
-  };
-  nestedFunction();
+	function nestedFunction() {
+		console.log(internal);
+	}
+	nestedFunction();
 }
 myFunction();

@@ -38,7 +38,7 @@ A method is a function that is defined as the value of a property or key within 
 
 3. What is closure?
 
-A closure is what happens when an inner function remembers the environment and scope in which it was invoked even when the outer function has finished executing. Even if you have an outer function removed from the stack, the inner function retains access to the variable environment of the parent function’s execution context.
+A closure in JavaScript occurs when a function is nested within another function. The inner function creates a closure around the outer function, which allows it to access the environment or variables from the outer function even when the outer function has finished executing. Even when the outer function is removed from the execution stack, the inner function retains access to the variable environment of the parent function’s execution environment.
 
 4. Describe the four rules of the 'this' keyword.
 
@@ -52,16 +52,16 @@ Implicit binding occurs when you invoke a method on an object.  The object upon 
 
 Explicit Binding
 
-Explicit binding occurs when you use the methods call, apply, or bind to reference and set the this keyword explicitly on an object.  When creating a constructor function which inherits from a parent constructor function for example, the call method can be used to invoke the parent constructor function in the context of the child constructor function. It is like running the parent constructor function with the this keyword of the child constructor function. 
+Explicit binding occurs when you use the methods call, apply, or bind to reference and set the this keyword explicitly on an object.  When creating a constructor function which inherits from a parent constructor function, the call method can be used to invoke the parent constructor function in the context of the child constructor function. It is like running the parent constructor function with the this keyword of the child constructor function. 
 
 New Keyword Binding
 
-When the new keyword is used to create an object from a constructor function,  the this keyword references the particular object returned by the constructor function. 
+When the new keyword is used to create an object from a constructor function, the this keyword references the particular object returned by the constructor function. 
 
 
 5. Why do we need super() in an extended class?
 
-When the super keyword is used in an extended class, it gives us the ability to call and access the functions associated with the parent constructor.
+When the super keyword is used in an extended class, it gives us the ability to call and access the functions and properties associated with the parent constructor.
 
 ## Project Set up
 
